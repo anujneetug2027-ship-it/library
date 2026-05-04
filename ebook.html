@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buy eBook — The Belief Architect | AmbikaShelf Library</title>
+  <link rel="icon" href="https://ambikashelf.in/icons/ambikashelf.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://ambikashelf.in/icons/ambikashelf.png" alt="AmbikaShelf" />
+      <span>Ambika<strong>Shelf</strong> <em>Library</em></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">← Back to Library</a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu">✕</button>
+    <a href="index.html">🏠 Home</a>
+    <a href="index.html#books">📚 Books</a>
+    <a href="query.html">❓ FAQ</a>
+    <a href="terms.html">📋 Terms</a>
+  </div>
+</nav>
+
+<div class="checkout-page">
+  <div class="checkout-container">
+
+    <!-- Step 1: Customer Details -->
+    <div id="step1">
+      <div class="checkout-header">
+        <h1>📱 Get the eBook</h1>
+        <p>The Belief Architect — Instant PDF Download</p>
+      </div>
+
+      <div class="step-indicator">
+        <div class="step active"><div class="step-num">1</div><div class="step-label">Your Info</div></div>
+        <div class="step-line"></div>
+        <div class="step"><div class="step-num">2</div><div class="step-label">Coupon</div></div>
+        <div class="step-line"></div>
+        <div class="step"><div class="step-num">3</div><div class="step-label">Payment</div></div>
+        <div class="step-line"></div>
+        <div class="step"><div class="step-num">4</div><div class="step-label">Download</div></div>
+      </div>
+
+      <div class="checkout-card">
+        <!-- Book Mini Summary -->
+        <div style="display:flex;gap:20px;align-items:center;padding:16px;background:rgba(0,188,212,0.04);border:1px solid rgba(0,188,212,0.15);border-radius:10px;margin-bottom:24px;">
+          <img src="https://ambikashelf.in/icons/mocup1.png" alt="Book" style="width:70px;border-radius:6px;" />
+          <div>
+            <div style="font-size:0.75rem;color:var(--cyan);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">eBook · PDF</div>
+            <div style="font-size:1rem;font-weight:700;color:var(--white);font-family:var(--font-heading);">The Belief Architect</div>
+            <div style="font-size:0.82rem;color:var(--text2);">by Anuj Chauhan · 124 pages</div>
+            <div style="font-size:1.1rem;font-weight:800;color:var(--gold);margin-top:4px;">₹29 <span style="font-size:0.85rem;color:var(--text2);text-decoration:line-through;font-weight:400;">₹49</span></div>
+          </div>
+        </div>
+
+        <h3>📋 Your Details</h3>
+        <div class="form-group">
+          <label>Full Name <span class="req">*</span></label>
+          <input type="text" class="form-control" id="ebName" placeholder="Your full name" />
+        </div>
+        <div class="form-group">
+          <label>Email Address <span class="req">*</span></label>
+          <input type="email" class="form-control" id="ebEmail" placeholder="your@email.com (eBook will be sent here)" />
+        </div>
+        <div class="form-group">
+          <label>Phone Number <span class="req">*</span></label>
+          <input type="tel" class="form-control" id="ebPhone" placeholder="10-digit mobile number" maxlength="10" />
+        </div>
+        <div class="form-group">
+          <div class="checkbox-group">
+            <input type="checkbox" id="ebConsent" checked />
+            <label for="ebConsent">I agree to the <a href="terms.html" style="color:var(--cyan);">Terms & Conditions</a>. I understand this is a digital product and no refund is applicable after download.</label>
+          </div>
+        </div>
+        <button class="pay-btn" onclick="goToStep2()">Continue →</button>
+        <div class="secure-note">🔒 Your info is safe and will only be used for order processing.</div>
+      </div>
+    </div>
+
+    <!-- Step 2: Coupon -->
+    <div id="step2" style="display:none;">
+      <div class="checkout-header">
+        <h1>🎟️ Apply Coupon</h1>
+        <p>Have a discount code? Apply it below!</p>
+      </div>
+
+      <div class="step-indicator">
+        <div class="step done"><div class="step-num">✓</div><div class="step-label">Your Info</div></div>
+        <div class="step-line done"></div>
+        <div class="step active"><div class="step-num">2</div><div class="step-label">Coupon</div></div>
+        <div class="step-line"></div>
+        <div class="step"><div class="step-num">3</div><div class="step-label">Payment</div></div>
+        <div class="step-line"></div>
+        <div class="step"><div class="step-num">4</div><div class="step-label">Download</div></div>
+      </div>
+
+      <div class="checkout-card">
+        <h3>🎟️ Coupon Code</h3>
+        <p style="font-size:0.88rem;color:var(--text2);margin-bottom:20px;">Enter a coupon code if you have one. Coupons are case-insensitive.</p>
+
+        <div class="coupon-section">
+          <input type="text" id="couponCode" placeholder="Enter coupon code (e.g. SHELF10)" />
+          <button onclick="applyCouponLocal()">Apply</button>
+        </div>
+
+        <div id="couponMsg" style="font-size:0.82rem;margin-bottom:16px;"></div>
+
+        <div class="order-summary">
+          <h4>Order Summary</h4>
+          <div class="order-line"><span>The Belief Architect (eBook)</span><span>₹49</span></div>
+          <div class="order-line"><span>Special Launch Discount</span><span style="color:#4caf50;">- ₹20</span></div>
+          <div class="order-line"><span>Coupon Discount</span><span id="ebDiscount" style="color:var(--text2);">₹0</span></div>
+          <div class="order-line"><span>Delivery / Platform Fee</span><span style="color:#4caf50;">FREE</span></div>
+          <div class="order-line"><span>GST</span><span style="color:#4caf50;">Included</span></div>
+          <div class="order-total"><span>Total Payable</span><strong id="ebTotal">₹29</strong></div>
+        </div>
+
+        <div style="background:rgba(76,175,80,0.06);border:1px solid rgba(76,175,80,0.2);border-radius:10px;padding:16px;margin-bottom:20px;">
+          <p style="font-size:0.82rem;color:var(--text3);">✅ <strong style="color:#4caf50;">All charges included.</strong> No hidden fees, no delivery fee, no GST extra.</p>
+          <p style="font-size:0.82rem;color:var(--text3);margin-top:6px;">⚡ <strong style="color:var(--cyan);">Instant Access</strong> — PDF download link sent immediately after payment.</p>
+        </div>
+
+        <button class="pay-btn" onclick="goToStep3()">Proceed to Pay ₹<span id="payAmt">29</span> →</button>
+        <button onclick="goBack(1)" style="width:100%;padding:12px;border:1px solid var(--border);border-radius:10px;color:var(--text2);font-size:0.9rem;margin-top:10px;">← Go Back</button>
+      </div>
+    </div>
+
+    <!-- Step 3: Payment -->
+    <div id="step3" style="display:none;">
+      <div class="checkout-header">
+        <h1>💳 Secure Payment</h1>
+        <p>You're one step away from your download!</p>
+      </div>
+
+      <div class="step-indicator">
+        <div class="step done"><div class="step-num">✓</div><div class="step-label">Your Info</div></div>
+        <div class="step-line done"></div>
+        <div class="step done"><div class="step-num">✓</div><div class="step-label">Coupon</div></div>
+        <div class="step-line done"></div>
+        <div class="step active"><div class="step-num">3</div><div class="step-label">Payment</div></div>
+        <div class="step-line"></div>
+        <div class="step"><div class="step-num">4</div><div class="step-label">Download</div></div>
+      </div>
+
+      <div class="checkout-card">
+        <h3>💳 Pay with Razorpay</h3>
+        <div class="order-summary">
+          <h4>Final Summary</h4>
+          <div class="order-line"><span>The Belief Architect — eBook</span><strong style="color:var(--white);">1 copy</strong></div>
+          <div class="order-line"><span>Format</span><span>PDF (Digital Download)</span></div>
+          <div class="order-total"><span>Amount to Pay</span><strong id="finalAmt">₹29</strong></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;padding:12px 16px;background:rgba(0,188,212,0.04);border-radius:8px;">
+          <img src="https://ambikashelf.in/icons/razorpay.png" alt="Razorpay" style="height:24px;object-fit:contain;" onerror="this.style.display='none'" />
+          <p style="font-size:0.82rem;color:var(--text2);">Powered by Razorpay — UPI, Cards, Net Banking, Wallets accepted. 100% secure.</p>
+        </div>
+        <button class="pay-btn" id="payNowBtn" onclick="startPayment()">🔒 Pay Now — ₹<span id="payNowAmt">29</span></button>
+        <div class="secure-note">🔒 256-bit SSL encrypted · Powered by Razorpay · PCI DSS Compliant</div>
+      </div>
+    </div>
+
+    <!-- Step 4: Success -->
+    <div id="step4" style="display:none;">
+      <div class="step-indicator">
+        <div class="step done"><div class="step-num">✓</div><div class="step-label">Your Info</div></div>
+        <div class="step-line done"></div>
+        <div class="step done"><div class="step-num">✓</div><div class="step-label">Coupon</div></div>
+        <div class="step-line done"></div>
+        <div class="step done"><div class="step-num">✓</div><div class="step-label">Payment</div></div>
+        <div class="step-line done"></div>
+        <div class="step done"><div class="step-num">✓</div><div class="step-label">Download</div></div>
+      </div>
+
+      <div class="checkout-card success-box">
+        <span class="success-icon">🎉</span>
+        <h2>Payment Successful!</h2>
+        <p>Thank you for purchasing <strong style="color:var(--cyan);">The Belief Architect</strong>. Your download is ready!</p>
+
+        <div class="order-details" id="successDetails"></div>
+
+        <a href="https://ambikashelf.in/icons/ebook.pdf" download="The-Belief-Architect-AmbikaShelf.pdf" class="download-btn" id="downloadBtn">
+          ⬇️ Download Your eBook (PDF)
+        </a>
+
+        <p style="font-size:0.82rem;color:var(--text2);margin-top:16px;">A copy has also been sent to your email address. Check your inbox (and spam folder).</p>
+
+        <div style="margin-top:28px;padding-top:24px;border-top:1px solid var(--border);">
+          <p style="font-size:0.85rem;color:var(--text2);margin-bottom:16px;">Enjoy the book? Share with a friend! 🙌</p>
+          <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+            <a href="https://wa.me/?text=Just%20got%20The%20Belief%20Architect%20by%20Anuj%20Chauhan!%20Check%20it%20out%20at%20https://library.ambikashelf.in" target="_blank" style="background:#25d366;color:white;padding:10px 20px;border-radius:8px;font-weight:600;font-size:0.85rem;">Share on WhatsApp</a>
+            <a href="index.html" style="border:1px solid var(--border);color:var(--text3);padding:10px 20px;border-radius:8px;font-weight:600;font-size:0.85rem;">← Back to Library</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER MINI -->
+<div style="text-align:center;padding:24px;border-top:1px solid rgba(0,188,212,0.1);color:var(--text2);font-size:0.8rem;">
+  © 2026 AmbikaShelf Library · <a href="query.html" style="color:var(--cyan);">Need Help?</a> · <a href="mailto:support@ambikashelf.in" style="color:var(--cyan);">support@ambikashelf.in</a>
+</div>
+
+<script src="main.js"></script>
+<script>
+  let ebDiscount = 0;
+  let basePrice = 29;
+  let finalPrice = 29;
+
+  function goToStep2() {
+    const name = document.getElementById('ebName').value.trim();
+    const email = document.getElementById('ebEmail').value.trim();
+    const phone = document.getElementById('ebPhone').value.trim();
+    const consent = document.getElementById('ebConsent').checked;
+
+    if (!name) return showToast('Please enter your name.', 'error');
+    if (!validateEmail(email)) return showToast('Please enter a valid email.', 'error');
+    if (!validatePhone(phone)) return showToast('Please enter a valid 10-digit phone number.', 'error');
+    if (!consent) return showToast('Please agree to the Terms & Conditions.', 'error');
+
+    document.getElementById('step1').style.display = 'none';
+    document.getElementById('step2').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function applyCouponLocal() {
+    const code = document.getElementById('couponCode').value.trim().toUpperCase();
+    const validCoupons = { 'SHELF10': 10, 'BELIEF20': 20, 'FIRST15': 15, 'ANUJ5': 5 };
+    const msg = document.getElementById('couponMsg');
+
+    if (validCoupons[code]) {
+      ebDiscount = validCoupons[code];
+      finalPrice = Math.max(basePrice - ebDiscount, 0);
+      document.getElementById('ebDiscount').textContent = `- ₹${ebDiscount}`;
+      document.getElementById('ebDiscount').style.color = '#4caf50';
+      document.getElementById('ebTotal').textContent = `₹${finalPrice}`;
+      document.getElementById('payAmt').textContent = finalPrice;
+      msg.style.color = '#4caf50';
+      msg.textContent = `✅ Coupon "${code}" applied! You saved ₹${ebDiscount}`;
+    } else {
+      msg.style.color = '#ef5350';
+      msg.textContent = '❌ Invalid or expired coupon code.';
+    }
+  }
+
+  function goToStep3() {
+    document.getElementById('finalAmt').textContent = `₹${finalPrice}`;
+    document.getElementById('payNowAmt').textContent = finalPrice;
+    document.getElementById('step2').style.display = 'none';
+    document.getElementById('step3').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function goBack(step) {
+    document.getElementById('step2').style.display = 'none';
+    document.getElementById('step' + step).style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  async function startPayment() {
+    const name = document.getElementById('ebName').value.trim();
+    const email = document.getElementById('ebEmail').value.trim();
+    const phone = document.getElementById('ebPhone').value.trim();
+    const btn = document.getElementById('payNowBtn');
+    btn.disabled = true;
+    btn.textContent = 'Opening Payment...';
+
+    await initiatePayment({
+      amount: finalPrice * 100,
+      name, email, phone,
+      productName: 'The Belief Architect — eBook',
+      onSuccess: (data) => {
+        const successDetails = document.getElementById('successDetails');
+        successDetails.innerHTML = `
+          <strong>Order ID:</strong> ${data.orderId || 'AS-' + Date.now()}<br/>
+          <strong>Payment ID:</strong> ${data.paymentId || 'N/A'}<br/>
+          <strong>Email:</strong> ${email}<br/>
+          <strong>Product:</strong> The Belief Architect (eBook PDF)
+        `;
+        document.getElementById('step3').style.display = 'none';
+        document.getElementById('step4').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+
+    btn.disabled = false;
+    btn.innerHTML = `🔒 Pay Now — ₹<span id="payNowAmt">${finalPrice}</span>`;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AmbikaShelf Library — Books by AmbikaShelf Publication</title>
+  <meta name="description" content="Official bookstore of AmbikaShelf Publication. Discover The Belief Architect by Anuj Chauhan — available as eBook, Paperback & Audiobook." />
+  <link rel="icon" href="https://ambikashelf.in/icons/ambikashelf.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://ambikashelf.in/icons/ambikashelf.png" alt="AmbikaShelf" />
+      <span>Ambika<strong>Shelf</strong> <em>Library</em></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="#books">Books</a>
+      <a href="#about-author">Author</a>
+      <a href="query.html">FAQ</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu">✕</button>
+    <a href="index.html">🏠 Home</a>
+    <a href="#books">📚 Books</a>
+    <a href="#about-author">✍️ About Author</a>
+    <a href="query.html">❓ FAQ &amp; Support</a>
+    <a href="terms.html">📋 Terms &amp; Conditions</a>
+    <a href="mailto:support@ambikashelf.in">✉️ Contact Us</a>
+    <div class="mobile-menu-footer">
+      <img src="https://ambikashelf.in/icons/ambikashelf.png" alt="AmbikaShelf" />
+      <p>Made with ❤️ in India</p>
+    </div>
+  </div>
+</nav>
+
+<!-- BANNER SLIDER -->
+<section class="banner-slider" id="home">
+  <div class="slides-container" id="slidesContainer">
+    <div class="slide active">
+      <img src="https://ambikashelf.in/icons/banner1.png" alt="AmbikaShelf Banner 1" />
+      <div class="slide-overlay">
+        <div class="slide-content">
+          <span class="slide-tag">Now Available</span>
+          <h2>The Belief Architect</h2>
+          <p>How Beliefs Shape Your Mind, Actions & Reality</p>
+          <a href="#books" class="btn-primary">Shop Now →</a>
+        </div>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="https://ambikashelf.in/icons/banner2.png" alt="AmbikaShelf Banner 2" />
+      <div class="slide-overlay">
+        <div class="slide-content">
+          <span class="slide-tag">eBook</span>
+          <h2>Read Instantly</h2>
+          <p>Download & start reading in seconds — only ₹29</p>
+          <a href="ebook.html" class="btn-primary">Get eBook →</a>
+        </div>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="https://ambikashelf.in/icons/banner3.png" alt="AmbikaShelf Banner 3" />
+      <div class="slide-overlay">
+        <div class="slide-content">
+          <span class="slide-tag">AmbikaShelf Publication</span>
+          <h2>Books That Transform</h2>
+          <p>Designed to reshape how you think, act, and grow.</p>
+          <a href="#books" class="btn-primary">Explore Library →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="slide-btn prev" id="prevBtn">&#8592;</button>
+  <button class="slide-btn next" id="nextBtn">&#8594;</button>
+  <div class="slide-dots" id="slideDots">
+    <span class="dot active" data-idx="0"></span>
+    <span class="dot" data-idx="1"></span>
+    <span class="dot" data-idx="2"></span>
+  </div>
+</section>
+
+<!-- TRUST BADGES -->
+<section class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><span>🚚</span><p>Free Delivery</p></div>
+    <div class="trust-item"><span>🔄</span><p>Easy Returns</p></div>
+    <div class="trust-item"><span>🔒</span><p>Secure Payments</p></div>
+    <div class="trust-item"><span>📦</span><p>Genuine Products</p></div>
+    <div class="trust-item"><span>⚡</span><p>Instant eBook</p></div>
+    <div class="trust-item"><span>🇮🇳</span><p>Made in India</p></div>
+  </div>
+</section>
+
+<!-- BOOKS SECTION -->
+<section class="books-section" id="books">
+  <div class="section-header">
+    <span class="section-tag">AmbikaShelf Publication</span>
+    <h2>Our <em>Library</em></h2>
+    <p>Handpicked books published exclusively by AmbikaShelf. Available in the format you love.</p>
+  </div>
+
+  <!-- BOOK SPOTLIGHT -->
+  <div class="book-spotlight">
+    <div class="spotlight-images">
+      <div class="main-img-wrap">
+        <img src="https://ambikashelf.in/icons/mocup1.png" alt="The Belief Architect" id="mainBookImg" class="main-book-img" />
+        <div class="img-badge">Bestseller</div>
+      </div>
+      <div class="thumb-gallery">
+        <img src="https://ambikashelf.in/icons/mocup1.png" alt="Mockup 1" class="thumb active" onclick="changeImg(this,'https://ambikashelf.in/icons/mocup1.png')" />
+        <img src="https://ambikashelf.in/icons/mocup2.png" alt="Mockup 2" class="thumb" onclick="changeImg(this,'https://ambikashelf.in/icons/mocup2.png')" />
+        <img src="https://ambikashelf.in/icons/mocup3.png" alt="Mockup 3" class="thumb" onclick="changeImg(this,'https://ambikashelf.in/icons/mocup3.png')" />
+      </div>
+    </div>
+    <div class="spotlight-info">
+      <div class="book-pub-tag">AmbikaShelf Publication · 2026</div>
+      <h1 class="book-title">The Belief Architect</h1>
+      <p class="book-subtitle">How Beliefs Shape Your Mind, Actions &amp; Reality</p>
+      <div class="book-meta-row">
+        <span class="book-author">By <strong>Anuj Chauhan</strong></span>
+        <span class="book-lang">English · 124 pages</span>
+        <span class="book-isbn">ISBN: 979-8255729340</span>
+      </div>
+      <div class="book-desc">
+        <p>In <em>The Belief Architect</em>, author Anuj Chauhan explores one of the most powerful forces influencing human behavior — belief. Drawing inspiration from psychology, neuroscience, and real-life observation, this book reveals how belief systems are formed, how they influence the brain, and how they quietly shape our perception of reality.</p>
+        <p>Written from the perspective of a student preparing for one of India's most competitive examinations, this book combines scientific insights with personal reflection to explore how the human mind can either limit potential or unlock extraordinary growth.</p>
+      </div>
+
+      <!-- CATEGORY TABS -->
+      <div class="format-tabs" id="formatTabs">
+        <button class="fmt-tab active" data-format="ebook" onclick="switchFormat('ebook', this)">📱 eBook</button>
+        <button class="fmt-tab" data-format="paperback" onclick="switchFormat('paperback', this)">📗 Paperback</button>
+        <button class="fmt-tab" data-format="audiobook" onclick="switchFormat('audiobook', this)">🎧 Audiobook</button>
+      </div>
+
+      <!-- eBook Panel -->
+      <div class="format-panel active" id="panel-ebook">
+        <div class="price-box">
+          <span class="price-label">eBook Price</span>
+          <div class="price-main">₹29 <span class="price-original">₹49</span> <span class="price-off">41% OFF</span></div>
+          <div class="price-note">Instant download · PDF format · Read on any device</div>
+        </div>
+        <div class="format-features">
+          <span>✅ Instant Delivery</span>
+          <span>✅ No Expiry</span>
+          <span>✅ All Devices</span>
+          <span>✅ Official PDF</span>
+        </div>
+        <div class="rating-row">
+          <div class="stars">★★★★★</div>
+          <span>5.0 (48 ratings)</span>
+        </div>
+        <div class="action-btns">
+          <a href="ebook.html" class="btn-buy">Buy Now — ₹29</a>
+          <a href="ebook.html" class="btn-cart">Add to Cart</a>
+        </div>
+      </div>
+
+      <!-- Paperback Panel -->
+      <div class="format-panel" id="panel-paperback">
+        <div class="price-box">
+          <span class="price-label">Paperback Price</span>
+          <div class="price-main">₹249 <span class="price-original">₹399</span> <span class="price-off">38% OFF</span></div>
+          <div class="price-note">Free delivery · 5×8 inches · Premium print quality</div>
+        </div>
+        <div class="format-features">
+          <span>🚚 Free Delivery</span>
+          <span>🔄 7-Day Returns</span>
+          <span>📦 Genuine Product</span>
+          <span>🏠 Cash Not Required</span>
+        </div>
+        <div class="rating-row">
+          <div class="stars">★★★★½</div>
+          <span>4.5 (112 ratings)</span>
+        </div>
+        <div class="action-btns">
+          <a href="paperback.html" class="btn-buy">Buy Now — ₹249</a>
+          <a href="paperback.html" class="btn-cart">Add to Cart</a>
+        </div>
+      </div>
+
+      <!-- Audiobook Panel -->
+      <div class="format-panel" id="panel-audiobook">
+        <div class="price-box">
+          <span class="price-label">Audiobook Price</span>
+          <div class="price-main">₹29 <span class="price-original">₹99</span> <span class="price-off">71% OFF</span></div>
+          <div class="price-note">🚧 Currently in production — Coming soon!</div>
+        </div>
+        <div class="format-features">
+          <span>🎧 Audio Format</span>
+          <span>📱 Mobile App</span>
+          <span>⏸️ Pause &amp; Resume</span>
+          <span>🌙 Sleep Timer</span>
+        </div>
+        <div class="audio-coming-soon">
+          <div class="audio-wave">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <p>Our team is currently recording the audiobook. <strong>Notify me when ready!</strong></p>
+          <div class="notify-form">
+            <input type="email" placeholder="Enter your email" id="notifyEmail" />
+            <button onclick="notifyMe()">Notify Me</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section class="inside-section">
+  <div class="section-header light">
+    <span class="section-tag">What You'll Learn</span>
+    <h2>Inside <em>The Belief Architect</em></h2>
+  </div>
+  <div class="inside-grid">
+    <div class="inside-card">
+      <div class="inside-icon">🧠</div>
+      <h3>Neuroplasticity & Belief</h3>
+      <p>Beliefs are literal neural pathways. "Neurons that fire together, wire together." Every repeated thought strengthens a circuit wired into your brain.</p>
+    </div>
+    <div class="inside-card">
+      <div class="inside-icon">👁️</div>
+      <h3>Reticular Activating System</h3>
+      <p>Your brain filters reality based on your beliefs. What you believe to be true is what you consistently notice, seek, and attract.</p>
+    </div>
+    <div class="inside-card">
+      <div class="inside-icon">📐</div>
+      <h3>The Blueprint Principle</h3>
+      <p>Just as a building needs a blueprint, our beliefs are the invisible blueprints of our lives — shaping effort, persistence, and every action we take.</p>
+    </div>
+    <div class="inside-card">
+      <div class="inside-icon">🔓</div>
+      <h3>Breaking Invisible Limits</h3>
+      <p>Most barriers exist in imagination, not reality. They are interpretations formed through past experience — and the moment you examine them, they weaken.</p>
+    </div>
+    <div class="inside-card">
+      <div class="inside-icon">🔄</div>
+      <h3>The Belief–Action Cycle</h3>
+      <p>Belief drives action. Action creates experience. Experience generates evidence. Evidence strengthens belief. This cycle is the engine behind transformation.</p>
+    </div>
+    <div class="inside-card">
+      <div class="inside-icon">🌱</div>
+      <h3>Small Changes Compound</h3>
+      <p>Every time you act despite doubt, you build a new belief. Over time, neural circuits strengthen and identity gradually evolves into something extraordinary.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTERS -->
+<section class="chapters-section">
+  <div class="section-header">
+    <span class="section-tag">10 Powerful Chapters</span>
+    <h2>A Complete Journey Through <em>Belief</em></h2>
+  </div>
+  <div class="chapters-list">
+    <div class="chapter-item"><span class="ch-num">01</span><div><h4>The Hidden Power of Belief</h4><p>Uncovers the invisible force shaping every human life — not money, not intelligence, but belief.</p></div></div>
+    <div class="chapter-item"><span class="ch-num">02</span><div><h4>The Architecture of the Mind</h4><p>Examines how the mind is structured — conscious vs subconscious, and how beliefs can be redesigned.</p></div></div>
+    <div class="chapter-item"><span class="ch-num">03</span><div><h4>How Beliefs Are Built</h4><p>Reveals how beliefs form quietly through repetition, emotional experience, and environment.</p></div></div>
+    <div class="chapter-item"><span class="ch-num">04</span><div><h4>The Belief–Reality Connection</h4><p>Shows how beliefs filter the reality we perceive through the brain's Reticular Activating System.</p></div></div>
+    <div class="chapter-item"><span class="ch-num">05</span><div><h4>Breaking the Invisible Limits</h4><p>Explores the silent mental cages built from limiting beliefs — and how to dismantle them step by step.</p></div></div>
+    <div class="chapter-item"><span class="ch-num">06</span><div><h4>Designing Empowering Beliefs</h4><p>Teaches intentional construction of new, growth-supporting beliefs — the way an architect designs.</p></div></div>
+    <div class="chapter-item"><span class="ch-num">07</span><div><h4>Becoming the Architect of Your Life</h4><p>Integrates everything — how identity, behavior, and belief interact to create the reality you live.</p></div></div>
+    <div class="chapter-item"><span class="ch-num">08</span><div><h4>The Science of Habit and Belief</h4><p>Bridges neuroscience and daily practice — exploring how habits reinforce beliefs and enable change.</p></div></div>
+    <div class="chapter-item"><span class="ch-num">09</span><div><h4>Belief in the Modern World</h4><p>Examines how digital environments and social media shape beliefs we carry daily.</p></div></div>
+    <div class="chapter-item"><span class="ch-num">10</span><div><h4>Final Thoughts</h4><p>A personal reflection and call to action — leaving you with clarity that belief can be consciously designed.</p></div></div>
+  </div>
+</section>
+
+<!-- ABOUT AUTHOR -->
+<section class="author-section" id="about-author">
+  <div class="author-inner">
+    <div class="author-img-wrap">
+      <img src="https://ambikashelf.in/icons/anuj.png" alt="Anuj Chauhan" class="author-img" onerror="this.src='https://ambikashelf.in/icons/ambikashelf.png'" />
+      <div class="author-social">
+        <a href="https://in.linkedin.com/in/anuj-chauhan-ambikashelf" target="_blank">in</a>
+        <a href="https://www.amazon.com/author/theanujchauhan" target="_blank">A</a>
+      </div>
+    </div>
+    <div class="author-bio">
+      <span class="section-tag">About the Author</span>
+      <h2>Anuj Chauhan</h2>
+      <p class="author-tagline">NEET Aspirant · Debut Author · Mindset Explorer</p>
+      <p>Anuj Chauhan is a young writer and student from India with a deep interest in psychology, learning, and personal development. Being a NEET aspirant, his curiosity extends beyond academic subjects into exploring how the human mind works and how beliefs influence the way people think, act, and shape their lives.</p>
+      <p>His first book, <em>The Belief Architect</em>, examines the powerful role beliefs play in shaping human behavior, perception, and personal growth. Drawing inspiration from psychology, neuroscience, and everyday human experiences, he seeks to present complex ideas in a clear and accessible way that encourages readers to reflect on their own mindset.</p>
+      <blockquote>"The moment you become aware of your beliefs, you take the first step toward becoming the architect of your own mind."</blockquote>
+      <div class="author-links">
+        <a href="https://in.linkedin.com/in/anuj-chauhan-ambikashelf" target="_blank" class="btn-secondary">LinkedIn Profile</a>
+        <a href="https://www.amazon.com/author/theanujchauhan" target="_blank" class="btn-secondary">Amazon Author Page</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section">
+  <div class="section-header">
+    <span class="section-tag">Reader Reviews</span>
+    <h2>Readers Are <em>Believing</em> in This Book</h2>
+    <p>Real thoughts from readers across India who found something meaningful inside these pages.</p>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>"This book hit differently. The Belief Architect explains the 'why' behind mindset in a way I finally understood. The chapter on invisible limits completely changed how I see myself."</p>
+      <div class="reviewer"><span class="reviewer-avatar">A</span><div><strong>Aditya</strong><small>Verified · Amazon</small></div></div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>"I bought this as an eBook and finished it in two sittings. The neuroscience explanations are simple enough for anyone — and the personal stories make it feel real, not preachy."</p>
+      <div class="reviewer"><span class="reviewer-avatar">A</span><div><strong>Akash</strong><small>Verified · Google Play</small></div></div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>"As a student preparing for competitive exams, this book felt written for me. The idea that belief — not resources — separates students' results is something I will carry forever."</p>
+      <div class="reviewer"><span class="reviewer-avatar">S</span><div><strong>Sakshi</strong><small>Verified · AmbikaShelf</small></div></div>
+    </div>
+    <div class="review-card featured">
+      <div class="review-stars">★★★★★</div>
+      <p>"Ordered the paperback — the quality is excellent and the content is even better. Anuj writes with the honesty of someone who actually lived what he's describing. Very relatable."</p>
+      <div class="reviewer"><span class="reviewer-avatar">D</span><div><strong>Dhansukh</strong><small>Verified · Amazon Paperback</small></div></div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p>"Chapter 5 on Breaking Invisible Limits alone is worth the price. I realized I'd been telling myself stories for years that simply weren't true. A book that makes you genuinely pause."</p>
+      <div class="reviewer"><span class="reviewer-avatar">A</span><div><strong>Ashish</strong><small>Verified · Meesho</small></div></div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★☆</div>
+      <p>"The eBook was so affordable and packed with value. I highlighted almost every page. The neuroscience behind beliefs is explained in such a relatable, student-friendly way."</p>
+      <div class="reviewer"><span class="reviewer-avatar">P</span><div><strong>Priya</strong><small>Verified · Flipkart</small></div></div>
+    </div>
+  </div>
+  <div class="rating-summary">
+    <div class="rating-big">
+      <span class="rating-num">4.8</span>
+      <div class="rating-stars-big">★★★★★</div>
+      <span>Based on 160+ ratings</span>
+    </div>
+    <div class="rating-bars">
+      <div class="r-bar"><span>5★</span><div class="bar"><div style="width:78%"></div></div><span>78%</span></div>
+      <div class="r-bar"><span>4★</span><div class="bar"><div style="width:14%"></div></div><span>14%</span></div>
+      <div class="r-bar"><span>3★</span><div class="bar"><div style="width:5%"></div></div><span>5%</span></div>
+      <div class="r-bar"><span>2★</span><div class="bar"><div style="width:2%"></div></div><span>2%</span></div>
+      <div class="r-bar"><span>1★</span><div class="bar"><div style="width:1%"></div></div><span>1%</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <img src="https://ambikashelf.in/icons/mocup1.png" alt="The Belief Architect" class="cta-book-img" />
+    <div class="cta-content">
+      <h2>Start Your Journey Today</h2>
+      <p>Choose the format that works for you and begin redesigning your belief system.</p>
+      <div class="cta-options">
+        <a href="ebook.html" class="cta-card">
+          <div class="cta-icon">📱</div>
+          <div class="cta-card-info">
+            <strong>eBook</strong>
+            <span>₹29 · Instant</span>
+          </div>
+          <div class="cta-arrow">→</div>
+        </a>
+        <a href="paperback.html" class="cta-card">
+          <div class="cta-icon">📗</div>
+          <div class="cta-card-info">
+            <strong>Paperback</strong>
+            <span>₹249 · Free Delivery</span>
+          </div>
+          <div class="cta-arrow">→</div>
+        </a>
+        <a href="#panel-audiobook" onclick="switchFormat('audiobook', document.querySelector('[data-format=audiobook]'))" class="cta-card disabled">
+          <div class="cta-icon">🎧</div>
+          <div class="cta-card-info">
+            <strong>Audiobook</strong>
+            <span>₹29 · Coming Soon</span>
+          </div>
+          <div class="cta-arrow">→</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="partners-section">
+  <div class="section-header">
+    <span class="section-tag">Trusted Partners</span>
+    <h2>Powered by the <em>Best</em></h2>
+  </div>
+  <div class="partners-row">
+    <img src="https://ambikashelf.in/icons/razorpay.png" alt="Razorpay" />
+    <img src="https://ambikashelf.in/icons/shiprocket.png" alt="Shiprocket" />
+    <img src="https://ambikashelf.in/icons/dehlivery.png" alt="Delhivery" />
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="https://ambikashelf.in/icons/ambikashelf.png" alt="AmbikaShelf" />
+      <h3>AmbikaShelf <span>Library</span></h3>
+      <p>Official bookstore of AmbikaShelf Publication. Books that reshape how you think, act, and grow.</p>
+      <p class="footer-tagline">✦ Made with ❤️ in India</p>
+      <div class="footer-social">
+        <a href="https://instagram.com/ambikashelf" target="_blank" title="Instagram"><img src="https://ambikashelf.in/icons/instagram.png" alt="Instagram" onerror="this.style.display='none'" /></a>
+        <a href="https://facebook.com/ambikashelf" target="_blank" title="Facebook"><img src="https://ambikashelf.in/icons/facebook.png" alt="Facebook" onerror="this.style.display='none'" /></a>
+        <a href="https://in.linkedin.com/in/anuj-chauhan-ambikashelf" target="_blank" title="LinkedIn"><img src="https://ambikashelf.in/icons/linkedin.png" alt="LinkedIn" onerror="this.style.display='none'" /></a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Books</h4>
+      <a href="ebook.html">eBook — ₹29</a>
+      <a href="paperback.html">Paperback — ₹249</a>
+      <a href="#panel-audiobook">Audiobook — Coming Soon</a>
+    </div>
+    <div class="footer-links">
+      <h4>Support</h4>
+      <a href="query.html">FAQ &amp; Help</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="mailto:support@ambikashelf.in">support@ambikashelf.in</a>
+      <a href="https://wa.me/919125573750" target="_blank">WhatsApp: 9125573750</a>
+      <p class="footer-hours">Mon–Sat · 9 AM – 11 PM</p>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="https://ambikashelf.in" target="_blank">AmbikaShelf Tools</a>
+      <a href="https://blog.ambikashelf.in" target="_blank">Book Blog</a>
+      <a href="https://www.amazon.com/author/theanujchauhan" target="_blank">Amazon Store</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 AmbikaShelf Library — AmbikaShelf Publication. All Rights Reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="query.html">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

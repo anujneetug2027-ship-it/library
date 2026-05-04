@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buy Paperback — The Belief Architect | AmbikaShelf Library</title>
+  <link rel="icon" href="https://ambikashelf.in/icons/ambikashelf.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://ambikashelf.in/icons/ambikashelf.png" alt="AmbikaShelf" />
+      <span>Ambika<strong>Shelf</strong> <em>Library</em></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">← Back to Library</a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu">✕</button>
+    <a href="index.html">🏠 Home</a>
+    <a href="query.html">❓ FAQ</a>
+    <a href="terms.html">📋 Terms</a>
+  </div>
+</nav>
+
+<div class="checkout-page">
+  <div class="checkout-container">
+
+    <!-- STEP 1: Personal Details -->
+    <div id="step1">
+      <div class="checkout-header">
+        <h1>📗 Order Paperback</h1>
+        <p>The Belief Architect — Physical Book Delivered to Your Door</p>
+      </div>
+
+      <div class="step-indicator">
+        <div class="step active"><div class="step-num">1</div><div class="step-label">Details</div></div>
+        <div class="step-line"></div>
+        <div class="step"><div class="step-num">2</div><div class="step-label">Address</div></div>
+        <div class="step-line"></div>
+        <div class="step"><div class="step-num">3</div><div class="step-label">Review</div></div>
+        <div class="step-line"></div>
+        <div class="step"><div class="step-num">4</div><div class="step-label">Payment</div></div>
+      </div>
+
+      <div class="checkout-card">
+        <!-- Book Mini Summary -->
+        <div style="display:flex;gap:20px;align-items:center;padding:16px;background:rgba(0,188,212,0.04);border:1px solid rgba(0,188,212,0.15);border-radius:10px;margin-bottom:24px;">
+          <img src="https://ambikashelf.in/icons/mocup2.png" alt="Book" style="width:70px;border-radius:6px;" />
+          <div>
+            <div style="font-size:0.75rem;color:var(--cyan);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Paperback · 5×8 inches</div>
+            <div style="font-size:1rem;font-weight:700;color:var(--white);font-family:var(--font-heading);">The Belief Architect</div>
+            <div style="font-size:0.82rem;color:var(--text2);">by Anuj Chauhan · 124 pages · Premium Print</div>
+            <div style="font-size:1.1rem;font-weight:800;color:var(--gold);margin-top:4px;">₹249 <span style="font-size:0.85rem;color:var(--text2);text-decoration:line-through;font-weight:400;">₹399</span> <span style="font-size:0.75rem;color:#4caf50;background:rgba(76,175,80,0.1);padding:2px 6px;border-radius:4px;">38% OFF</span></div>
+          </div>
+        </div>
+
+        <h3>👤 Personal Details</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name <span class="req">*</span></label>
+            <input type="text" class="form-control" id="pbFirst" placeholder="First name" />
+          </div>
+          <div class="form-group">
+            <label>Last Name <span class="req">*</span></label>
+            <input type="text" class="form-control" id="pbLast" placeholder="Last name" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address <span class="req">*</span></label>
+          <input type="email" class="form-control" id="pbEmail" placeholder="your@email.com (order confirmation)" />
+        </div>
+        <div class="form-group">
+          <label>Phone Number <span class="req">*</span></label>
+          <input type="tel" class="form-control" id="pbPhone" placeholder="10-digit mobile number" maxlength="10" />
+        </div>
+        <div class="form-group">
+          <label>Alternate Phone (optional)</label>
+          <input type="tel" class="form-control" id="pbAltPhone" placeholder="Alternate contact number" maxlength="10" />
+        </div>
+        <button class="pay-btn" onclick="goToPbStep2()">Continue to Address →</button>
+      </div>
+    </div>
+
+    <!-- STEP 2: Address -->
+    <div id="step2" style="display:none;">
+      <div class="checkout-header">
+        <h1>🏠 Delivery Address</h1>
+        <p>We ship across India — Free Delivery!</p>
+      </div>
+
+      <div class="step-indicator">
+        <div class="step done"><div class="step-num">✓</div><div class="step-label">Details</div></div>
+        <div class="step-line done"></div>
+        <div class="step active"><div class="step-num">2</div><div class="step-label">Address</div></div>
+        <div class="step-line"></div>
+        <div class="step"><div class="step-num">3</div><div class="step-label">Review</div></div>
+        <div class="step-line"></div>
+        <div class="step"><div class="step-num">4</div><div class="step-label">Payment</div></div>
+      </div>
+
+      <div class="checkout-card">
+        <h3>📍 Shipping Address</h3>
+        <div class="form-group">
+          <label>Address Line 1 <span class="req">*</span></label>
+          <input type="text" class="form-control" id="pbAddr1" placeholder="House No, Building, Street Name" />
+        </div>
+        <div class="form-group">
+          <label>Address Line 2</label>
+          <input type="text" class="form-control" id="pbAddr2" placeholder="Locality, Area, Landmark (optional)" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>City <span class="req">*</span></label>
+            <input type="text" class="form-control" id="pbCity" placeholder="City" />
+          </div>
+          <div class="form-group">
+            <label>State <span class="req">*</span></label>
+            <select class="form-control" id="pbState">
+              <option value="">Select State</option>
+              <option>Andhra Pradesh</option><option>Arunachal Pradesh</option><option>Assam</option>
+              <option>Bihar</option><option>Chhattisgarh</option><option>Delhi</option>
+              <option>Goa</option><option>Gujarat</option><option>Haryana</option>
+              <option>Himachal Pradesh</option><option>Jharkhand</option><option>Karnataka</option>
+              <option>Kerala</option><option>Madhya Pradesh</option><option>Maharashtra</option>
+              <option>Manipur</option><option>Meghalaya</option><option>Mizoram</option>
+              <option>Nagaland</option><option>Odisha</option><option>Punjab</option>
+              <option>Rajasthan</option><option>Sikkim</option><option>Tamil Nadu</option>
+              <option>Telangana</option><option>Tripura</option><option>Uttar Pradesh</option>
+              <option>Uttarakhand</option><option>West Bengal</option>
+              <option>Andaman and Nicobar</option><option>Chandigarh</option>
+              <option>Dadra and Nagar Haveli</option><option>Daman and Diu</option>
+              <option>Jammu and Kashmir</option><option>Ladakh</option>
+              <option>Lakshadweep</option><option>Puducherry</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Pincode <span class="req">*</span></label>
+            <input type="text" class="form-control" id="pbPin" placeholder="6-digit PIN code" maxlength="6" />
+          </div>
+          <div class="form-group">
+            <label>Country</label>
+            <input type="text" class="form-control" value="India" readonly style="opacity:0.6;" />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="checkbox-group">
+            <input type="checkbox" id="pbConsent" checked />
+            <label for="pbConsent">I agree to the <a href="terms.html" style="color:var(--cyan);">Terms & Conditions</a>. I understand delivery takes 7-10 business days.</label>
+          </div>
+        </div>
+        <button class="pay-btn" onclick="goToPbStep3()">Review Order →</button>
+        <button onclick="showStep('step1','step2')" style="width:100%;padding:12px;border:1px solid var(--border);border-radius:10px;color:var(--text2);font-size:0.9rem;margin-top:10px;">← Go Back</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Review + Pricing -->
+    <div id="step3" style="display:none;">
+      <div class="checkout-header">
+        <h1>📋 Review Your Order</h1>
+        <p>Check everything before proceeding to payment.</p>
+      </div>
+
+      <div class="step-indicator">
+        <div class="step done"><div class="step-num">✓</div><div class="step-label">Details</div></div>
+        <div class="step-line done"></div>
+        <div class="step done"><div class="step-num">✓</div><div class="step-label">Address</div></div>
+        <div class="step-line done"></div>
+        <div class="step active"><div class="step-num">3</div><div class="step-label">Review</div></div>
+        <div class="step-line"></div>
+        <div class="step"><div class="step-num">4</div><div class="step-label">Payment</div></div>
+      </div>
+
+      <div class="checkout-card">
+        <h3>📋 Order Review</h3>
+        <div id="orderReview" style="margin-bottom:20px;font-size:0.88rem;color:var(--text3);line-height:1.9;"></div>
+
+        <h3 style="margin-top:8px;">🏷️ Apply Coupon</h3>
+        <div class="coupon-section">
+          <input type="text" id="pbCoupon" placeholder="Enter coupon code" />
+          <button onclick="applyPbCoupon()">Apply</button>
+        </div>
+        <div id="pbCouponMsg" style="font-size:0.82rem;margin-bottom:16px;"></div>
+
+        <div class="order-summary">
+          <h4>Price Breakdown</h4>
+          <div class="order-line"><span>The Belief Architect (Paperback)</span><span>₹399</span></div>
+          <div class="order-line"><span>Launch Discount</span><span style="color:#4caf50;">- ₹150</span></div>
+          <div class="order-line"><span>Coupon Discount</span><span id="pbDiscountShow" style="color:var(--text2);">₹0</span></div>
+          <div class="order-line"><span>Delivery Fee</span><span style="color:#4caf50;">FREE 🚚</span></div>
+          <div class="order-line"><span>GST (included)</span><span style="color:#4caf50;">₹0 extra</span></div>
+          <div class="order-line"><span>Platform Fee</span><span style="color:#4caf50;">FREE</span></div>
+          <div class="order-total"><span>Total Payable</span><strong id="pbTotal">₹249</strong></div>
+        </div>
+
+        <div style="background:rgba(0,188,212,0.04);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:20px;">
+          <h4 style="font-size:0.82rem;color:var(--text3);margin-bottom:12px;text-transform:uppercase;letter-spacing:1px;">Delivery Info</h4>
+          <div class="delivery-timeline">
+            <div class="timeline-item"><div class="timeline-dot"></div><div><strong>Order Confirmed</strong><p>Immediately after payment</p></div></div>
+            <div class="timeline-item"><div class="timeline-dot"></div><div><strong>Processing & Dispatch</strong><p>Within 1-2 business days</p></div></div>
+            <div class="timeline-item"><div class="timeline-dot" style="background:var(--gold);"></div><div><strong>Expected Delivery</strong><p id="expectedDate">~10 business days from order date</p></div></div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;">
+          <div style="background:rgba(76,175,80,0.06);border:1px solid rgba(76,175,80,0.2);border-radius:8px;padding:10px 16px;font-size:0.8rem;color:#4caf50;display:flex;align-items:center;gap:8px;">🚚 Free Delivery Across India</div>
+          <div style="background:rgba(76,175,80,0.06);border:1px solid rgba(76,175,80,0.2);border-radius:8px;padding:10px 16px;font-size:0.8rem;color:#4caf50;display:flex;align-items:center;gap:8px;">🔄 7-Day Easy Returns</div>
+          <div style="background:rgba(76,175,80,0.06);border:1px solid rgba(76,175,80,0.2);border-radius:8px;padding:10px 16px;font-size:0.8rem;color:#4caf50;display:flex;align-items:center;gap:8px;">📦 Genuine Publication</div>
+        </div>
+
+        <button class="pay-btn" onclick="goToPbStep4()">Proceed to Pay ₹<span id="pbPayBtn">249</span> →</button>
+        <button onclick="showStep('step2','step3')" style="width:100%;padding:12px;border:1px solid var(--border);border-radius:10px;color:var(--text2);font-size:0.9rem;margin-top:10px;">← Go Back</button>
+      </div>
+    </div>
+
+    <!-- STEP 4: Payment -->
+    <div id="step4" style="display:none;">
+      <div class="checkout-header">
+        <h1>💳 Secure Payment</h1>
+        <p>You're almost there! Complete your order.</p>
+      </div>
+
+      <div class="step-indicator">
+        <div class="step done"><div class="step-num">✓</div><div class="step-label">Details</div></div>
+        <div class="step-line done"></div>
+        <div class="step done"><div class="step-num">✓</div><div class="step-label">Address</div></div>
+        <div class="step-line done"></div>
+        <div class="step done"><div class="step-num">✓</div><div class="step-label">Review</div></div>
+        <div class="step-line done"></div>
+        <div class="step active"><div class="step-num">4</div><div class="step-label">Payment</div></div>
+      </div>
+
+      <div class="checkout-card">
+        <h3>💳 Pay with Razorpay</h3>
+        <div class="order-summary">
+          <h4>Final Amount</h4>
+          <div class="order-line"><span>The Belief Architect (Paperback)</span><strong style="color:var(--white);">1 copy</strong></div>
+          <div class="order-line"><span>Delivery</span><span style="color:#4caf50;">FREE</span></div>
+          <div class="order-total"><span>Total</span><strong id="pb4Total">₹249</strong></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;padding:12px 16px;background:rgba(0,188,212,0.04);border-radius:8px;">
+          <img src="https://ambikashelf.in/icons/razorpay.png" alt="Razorpay" style="height:24px;object-fit:contain;" onerror="this.style.display='none'" />
+          <p style="font-size:0.82rem;color:var(--text2);">Powered by Razorpay — UPI, Cards, Net Banking & Wallets. 100% secure.</p>
+        </div>
+        <button class="pay-btn" id="pbPayBtn2" onclick="startPbPayment()">🔒 Pay Now — ₹<span id="pb4PayAmt">249</span></button>
+        <div class="secure-note">🔒 256-bit SSL encrypted · PCI DSS Compliant · Safe Checkout</div>
+      </div>
+    </div>
+
+    <!-- SUCCESS -->
+    <div id="step5" style="display:none;">
+      <div class="checkout-card success-box">
+        <span class="success-icon">🎉</span>
+        <h2>Order Placed Successfully!</h2>
+        <p>Your copy of <strong style="color:var(--cyan);">The Belief Architect</strong> is on its way!</p>
+        <div class="order-details" id="pbSuccessDetails"></div>
+        <div style="background:rgba(0,188,212,0.04);border:1px solid var(--border);border-radius:10px;padding:20px;margin:20px 0;text-align:left;">
+          <h4 style="font-size:0.85rem;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">What's Next?</h4>
+          <div class="delivery-timeline">
+            <div class="timeline-item"><div class="timeline-dot" style="background:#4caf50;"></div><div><strong>Order Confirmed ✓</strong><p>Check your email for confirmation</p></div></div>
+            <div class="timeline-item"><div class="timeline-dot"></div><div><strong>Processing (1-2 days)</strong><p>We're preparing your book</p></div></div>
+            <div class="timeline-item"><div class="timeline-dot" style="background:var(--gold);"></div><div><strong>Delivery (7-10 days)</strong><p>Delivered to your address</p></div></div>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:8px;">
+          <a href="https://wa.me/919125573750" target="_blank" style="background:#25d366;color:white;padding:10px 20px;border-radius:8px;font-weight:600;font-size:0.85rem;">Track on WhatsApp</a>
+          <a href="index.html" style="border:1px solid var(--border);color:var(--text3);padding:10px 20px;border-radius:8px;font-weight:600;font-size:0.85rem;">← Back to Library</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div style="text-align:center;padding:24px;border-top:1px solid rgba(0,188,212,0.1);color:var(--text2);font-size:0.8rem;">
+  © 2026 AmbikaShelf Library · <a href="query.html" style="color:var(--cyan);">Need Help?</a> · <a href="mailto:support@ambikashelf.in" style="color:var(--cyan);">support@ambikashelf.in</a>
+</div>
+
+<script src="main.js"></script>
+<script>
+  let pbDiscount = 0;
+  let pbBase = 249;
+  let pbFinal = 249;
+
+  function showStep(show, hide) {
+    document.getElementById(hide).style.display = 'none';
+    document.getElementById(show).style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function goToPbStep2() {
+    const first = document.getElementById('pbFirst').value.trim();
+    const last = document.getElementById('pbLast').value.trim();
+    const email = document.getElementById('pbEmail').value.trim();
+    const phone = document.getElementById('pbPhone').value.trim();
+    if (!first || !last) return showToast('Please enter your full name.', 'error');
+    if (!validateEmail(email)) return showToast('Please enter a valid email.', 'error');
+    if (!validatePhone(phone)) return showToast('Please enter a valid 10-digit phone number.', 'error');
+    showStep('step2', 'step1');
+  }
+
+  function goToPbStep3() {
+    const addr1 = document.getElementById('pbAddr1').value.trim();
+    const city = document.getElementById('pbCity').value.trim();
+    const state = document.getElementById('pbState').value;
+    const pin = document.getElementById('pbPin').value.trim();
+    const consent = document.getElementById('pbConsent').checked;
+    if (!addr1) return showToast('Please enter your address.', 'error');
+    if (!city) return showToast('Please enter your city.', 'error');
+    if (!state) return showToast('Please select your state.', 'error');
+    if (!/^\d{6}$/.test(pin)) return showToast('Please enter a valid 6-digit PIN code.', 'error');
+    if (!consent) return showToast('Please agree to the Terms & Conditions.', 'error');
+
+    // Populate review
+    const name = document.getElementById('pbFirst').value.trim() + ' ' + document.getElementById('pbLast').value.trim();
+    const email = document.getElementById('pbEmail').value.trim();
+    const phone = document.getElementById('pbPhone').value.trim();
+    const addr2 = document.getElementById('pbAddr2').value.trim();
+    document.getElementById('orderReview').innerHTML = `
+      <strong>Name:</strong> ${name}<br/>
+      <strong>Email:</strong> ${email}<br/>
+      <strong>Phone:</strong> ${phone}<br/>
+      <strong>Address:</strong> ${addr1}${addr2 ? ', ' + addr2 : ''}, ${city}, ${state} - ${pin}, India<br/>
+    `;
+
+    // Expected delivery
+    const delivDate = new Date();
+    delivDate.setDate(delivDate.getDate() + 10);
+    document.getElementById('expectedDate').textContent = delivDate.toDateString();
+
+    showStep('step3', 'step2');
+  }
+
+  function applyPbCoupon() {
+    const code = document.getElementById('pbCoupon').value.trim().toUpperCase();
+    const validCoupons = { 'SHELF10': 10, 'BELIEF20': 20, 'FIRST15': 15, 'ANUJ5': 5 };
+    const msg = document.getElementById('pbCouponMsg');
+    if (validCoupons[code]) {
+      pbDiscount = validCoupons[code];
+      pbFinal = Math.max(pbBase - pbDiscount, 0);
+      document.getElementById('pbDiscountShow').textContent = `- ₹${pbDiscount}`;
+      document.getElementById('pbDiscountShow').style.color = '#4caf50';
+      document.getElementById('pbTotal').textContent = `₹${pbFinal}`;
+      document.getElementById('pbPayBtn').textContent = pbFinal;
+      msg.style.color = '#4caf50';
+      msg.textContent = `✅ Coupon applied! You saved ₹${pbDiscount}`;
+    } else {
+      msg.style.color = '#ef5350';
+      msg.textContent = '❌ Invalid coupon code.';
+    }
+  }
+
+  function goToPbStep4() {
+    document.getElementById('pb4Total').textContent = `₹${pbFinal}`;
+    document.getElementById('pb4PayAmt').textContent = pbFinal;
+    showStep('step4', 'step3');
+  }
+
+  async function startPbPayment() {
+    const name = document.getElementById('pbFirst').value.trim() + ' ' + document.getElementById('pbLast').value.trim();
+    const email = document.getElementById('pbEmail').value.trim();
+    const phone = document.getElementById('pbPhone').value.trim();
+    const addr1 = document.getElementById('pbAddr1').value.trim();
+    const addr2 = document.getElementById('pbAddr2').value.trim();
+    const city = document.getElementById('pbCity').value.trim();
+    const state = document.getElementById('pbState').value;
+    const pin = document.getElementById('pbPin').value.trim();
+
+    const btn = document.getElementById('pbPayBtn2');
+    btn.disabled = true;
+    btn.textContent = 'Opening Payment...';
+
+    const address = `${addr1}${addr2 ? ', ' + addr2 : ''}, ${city}, ${state} - ${pin}`;
+
+    await initiatePayment({
+      amount: pbFinal * 100,
+      name, email, phone,
+      productName: 'The Belief Architect — Paperback',
+      onSuccess: (data) => {
+        const delivDate = new Date();
+        delivDate.setDate(delivDate.getDate() + 10);
+        document.getElementById('pbSuccessDetails').innerHTML = `
+          <strong>Order ID:</strong> ${data.orderId || 'ASP-' + Date.now()}<br/>
+          <strong>Payment ID:</strong> ${data.paymentId || 'N/A'}<br/>
+          <strong>Name:</strong> ${name}<br/>
+          <strong>Email:</strong> ${email}<br/>
+          <strong>Delivery Address:</strong> ${address}<br/>
+          <strong>Expected Delivery:</strong> ${delivDate.toDateString()}<br/>
+          <strong>Product:</strong> The Belief Architect (Paperback)
+        `;
+        document.getElementById('step4').style.display = 'none';
+        document.getElementById('step5').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+
+    btn.disabled = false;
+    btn.innerHTML = `🔒 Pay Now — ₹<span id="pb4PayAmt">${pbFinal}</span>`;
+  }
+</script>
+</body>
+</html>
