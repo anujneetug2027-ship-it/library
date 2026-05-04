@@ -282,3 +282,41 @@ window.initiatePayment = async function(options) {
     console.error(err);
   }
 };
+
+// ===== RE-BIND HAMBURGER for new DOM structure (menu moved outside nav) =====
+document.addEventListener('DOMContentLoaded', function() {
+  const ham = document.getElementById('hamburger');
+  const menu = document.getElementById('mobileMenu');
+  const close = document.getElementById('closeMenu');
+
+  function openMobileMenu() {
+    if (!menu) return;
+    menu.classList.add('open');
+    let overlay = document.getElementById('menuOverlay');
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.className = 'menu-overlay';
+      overlay.id = 'menuOverlay';
+      document.body.appendChild(overlay);
+    }
+    overlay.classList.add('open');
+    overlay.onclick = closeMobileMenu;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMobileMenu() {
+    if (!menu) return;
+    menu.classList.remove('open');
+    const overlay = document.getElementById('menuOverlay');
+    if (overlay) overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  if (ham) ham.addEventListener('click', openMobileMenu);
+  if (close) close.addEventListener('click', closeMobileMenu);
+  if (menu) {
+    menu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', closeMobileMenu);
+    });
+  }
+});
